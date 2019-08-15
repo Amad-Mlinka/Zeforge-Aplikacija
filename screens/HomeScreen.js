@@ -11,11 +11,14 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <ScrollView
+    <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
@@ -36,13 +39,12 @@ export default function HomeScreen() {
             <Text style={styles.helpLinkText}>
               Help, it didn’t automatically reload!
             </Text>
+                  <Button title="Solid Button" type="solid"/>
+
           </TouchableOpacity>
         </View>
       </ScrollView>
 
-      
-
-       
       </View>
     
   );
