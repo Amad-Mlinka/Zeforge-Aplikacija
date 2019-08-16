@@ -4,8 +4,12 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import AboutUsScreen from '../screens/AboutUsScreen';
+import CalendarScreen from '../screens/CalendarScreen';
+import MeetupsScreen from '../screens/MeetupsScreen';
+import HammerITScreen from '../screens/HammerITScreen';
+import ZeForgeLabScreen from '../screens/ZeForgeLabScreen';
+import LetsTalkScreen from '../screens/LetsTalkScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -35,42 +39,115 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
+const AboutUsStack = createStackNavigator(
   {
-    Links: LinksScreen,
+    AboutUs: AboutUsScreen,
   },
   config
 );
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+AboutUsStack.navigationOptions = {
+  tabBarLabel: 'About Us',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-contacts' : 'md-contacts'} />
   ),
 };
 
-LinksStack.path = '';
+AboutUsStack.path = '';
 
-const SettingsStack = createStackNavigator(
+const CalendarStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    Calendar: CalendarScreen,
   },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+CalendarStack.navigationOptions = {
+  tabBarLabel: 'Calendar',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-grid' : 'md-grid'} />
   ),
 };
 
-SettingsStack.path = '';
+CalendarStack.path = '';
+
+
+const MeetupsStack = createStackNavigator(
+  {
+    Meetups: MeetupsScreen,
+  },
+  config
+);
+
+MeetupsStack.navigationOptions = {
+  tabBarLabel: 'Meetups',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-bookmark' : 'md-bookmark'} />
+  ),
+};
+
+MeetupsStack.path = '';
+
+
+const HammerITStack = createStackNavigator(
+  {
+    HammerIT: HammerITScreen,
+  },
+  config
+);
+
+HammerITStack.navigationOptions = {
+  tabBarLabel: 'HammerIT',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-hammer' : 'md-hammer'} />
+  ),
+};
+
+HammerITStack.path = '';
+
+
+const ZeForgeLabStack = createStackNavigator(
+  {
+    ZeForgeLab: ZeForgeLabScreen,
+  },
+  config
+);
+
+ZeForgeLabStack.navigationOptions = {
+  tabBarLabel: 'ZeForge Lab',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-flask' : 'md-flask'} />
+  ),
+};
+
+ZeForgeLabStack.path = '';
+
+
+const LetsTalkStack = createStackNavigator(
+  {
+    LetsTalk: LetsTalkScreen,
+  },
+  config
+);
+
+LetsTalkStack.navigationOptions = {
+  tabBarLabel: "Let's Talk",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-mail' : 'md-mail'} />
+  ),
+};
+
+LetsTalkStack.path = '';
+
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  AboutUsStack,
+  CalendarStack,
+  MeetupsStack,
+  HammerITStack,
+  ZeForgeLabStack,
+  LetsTalkStack
 });
 
 tabNavigator.path = '';
