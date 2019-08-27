@@ -37,9 +37,7 @@ constructor (props){
     isLoadingComplete:false,
   };
   if(firebase.apps.length)
-    {(firebase.initialiseApp(ApiKeeys.FirebaseConfig);
-      
-    };
+    (firebase.initialiseApp(ApiKeeys.FirebaseConfig)
 
 }
 
