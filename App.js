@@ -4,7 +4,6 @@ import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import ApiKeys from './constants';
 import * as firebase from 'firebase';
 
 import AppNavigator from './navigation/AppNavigator';
@@ -30,16 +29,19 @@ export default function App(props) {
   }
 }
 
-constructor (props){
-  super(props);
-  this.state=
-  {
-    isLoadingComplete:false,
-  };
-  if(firebase.apps.length)
-    (firebase.initialiseApp(ApiKeeys.FirebaseConfig)
 
-}
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCbUiXaoxfVVpu0hcXmI3pPwig0lNeUYSw",
+  authDomain: "zeforge-4196f.firebaseapp.com",
+  databaseURL: "https://zeforge-4196f.firebaseio.com",
+  projectId: "zeforge-4196f",
+  storageBucket: "",
+  messagingSenderId: "946296622857",
+  appId: "1:946296622857:web:53e9fd9f4fb50b82"
+};
+
+firebase.initializeApp(firebaseConfig);
 
 async function loadResourcesAsync() {
   await Promise.all([

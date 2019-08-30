@@ -10,7 +10,7 @@ export default function CalendarScreen() {
   return <Header
   placement="left"
   leftComponent={{ icon: 'menu', color: '#fff' }}
-  centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
+  centerComponent={{ text: 'Calendar', style: { color: '#fff' } }}
   rightComponent={{ icon: 'home', color: '#fff' }}
 />;
 }
